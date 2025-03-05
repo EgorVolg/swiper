@@ -4,8 +4,8 @@ import SwiperCore from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import styled from "styled-components";
-import VectorRight from "./VectorRight.svg";
-import VectorLeft from "./VectorLeft.svg";
+import VectorRight from "./Next.svg";
+import VectorLeft from "./Prev.svg";
 
 const info = [
   {
@@ -128,13 +128,13 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: colunm;
   width: 60px;
-
+  margin-right: 30px;
 `;
 
 const NextButton = styled.button<{ isVisible: boolean }>`
   display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
   position: absolute;
- 
+
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -145,6 +145,8 @@ const NextButton = styled.button<{ isVisible: boolean }>`
   cursor: pointer;
   align-items: center;
   justify-content: center;
+
+  box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
 `;
 
 const PrevButton = styled(NextButton)`
