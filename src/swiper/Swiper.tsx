@@ -1,65 +1,72 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import styled from "styled-components";
 import VectorRight from "./VectorRight.svg";
+import VectorLeft from "./VectorLeft.svg";
 
 const info = [
-    {
-      year: 2015,
-      title:
-        "13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды",
-    },
-    {
-      year: 2016,
-      title:
-        "Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11",
-    },
-    {
-      year: 2017,
-      title:
-        "Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi",
-    },
-    {
-      year: 2015,
-      title:
-        "13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды",
-    },
-    {
-      year: 2016,
-      title:
-        "Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11",
-    },
-    {
-      year: 2017,
-      title:
-        "Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi",
-    },
-  ];
-  
-export const MySwiper = () => {
-  
+  {
+    year: 2015,
+    title:
+      "13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды",
+  },
+  {
+    year: 2016,
+    title:
+      "Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11",
+  },
+  {
+    year: 2017,
+    title:
+      "Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi",
+  },
+  {
+    year: 2015,
+    title:
+      "13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды",
+  },
+  {
+    year: 2016,
+    title:
+      "Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11",
+  },
+  {
+    year: 2017,
+    title:
+      "Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi",
+  },
+];
 
+export const MySwiper = () => {
   return (
     <SwiperContainer>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper: any) => {
-          console.log(swiper);
+      <NextButton
+        onClick={() => {
+          const swiper: any = document.querySelector(".swiper");
+          swiper.swiper.slidePrev();
         }}
       >
+        <img src={VectorLeft} width={"7px"} height={"15px"} color="#3877EE" />
+      </NextButton>
+
+      <Swiper spaceBetween={50} slidesPerView={3} navigation>
         {info.map((item, index) => (
           <SwiperSlide key={index}>
             <InfoBlock>
-              <YearText>{item.year}</YearText>
+              <YearText>{item.year} </YearText>
               <Info>{item.title}</Info>
             </InfoBlock>
           </SwiperSlide>
         ))}
       </Swiper>
-      <NextButton>
+
+      <NextButton
+        onClick={() => {
+          const swiper: any = document.querySelector(".swiper");
+          swiper.swiper.slideNext();
+        }}
+      >
         <img src={VectorRight} width={"7px"} height={"15px"} />
       </NextButton>
     </SwiperContainer>
@@ -82,7 +89,7 @@ const YearText = styled.p`
   font-size: 25px;
   line-height: 30px;
   letter-spacing: 0%;
-  color: #000000;
+  color: #3877ee;
 `;
 
 const Info = styled.div`
