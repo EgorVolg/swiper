@@ -7,42 +7,13 @@ import styled from "styled-components";
 import VectorRight from "./../assets/Next.svg";
 import VectorLeft from "./../assets/Prev.svg";
 
-const info = [
-  {
-    year: 2015,
-    title:
-      "13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды",
-  },
-  {
-    year: 2016,
-    title:
-      "Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11",
-  },
-  {
-    year: 2017,
-    title:
-      "Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi",
-  },
-  {
-    year: 2015,
-    title:
-      "13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды",
-  },
-  {
-    year: 2016,
-    title:
-      "Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11",
-  },
-  {
-    year: 2017,
-    title:
-      "Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi",
-  },
-];
-
 SwiperCore.use([Navigation]);
 
-export const MySwiper = () => {
+export const MySwiper = ({
+  info,
+}: {
+  info: { year: number; title: string }[];
+}) => {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const swiperRef = useRef<SwiperCore | null>(null);
@@ -59,13 +30,13 @@ export const MySwiper = () => {
           <b>06/06</b>
         </ListPointsBlock>
         <NavButton
-          className="swiper-button-prev" 
+          className="swiper-button-prev"
           onClick={() => swiperRef.current?.slidePrev()}
         >
           <img src={VectorLeft} />
         </NavButton>
         <NavButton
-          className="swiper-button-next" 
+          className="swiper-button-next"
           onClick={() => swiperRef.current?.slideNext()}
         >
           <img src={VectorRight} />

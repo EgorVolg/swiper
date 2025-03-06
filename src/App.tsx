@@ -3,14 +3,47 @@ import styled from "styled-components";
 import { MySwiper } from "./components/swiper/Swiper";
 import { TimelineWheel } from "./components/timeline/TimelineWheel";
 
+const info = [
+  {
+    year: 2015,
+    title:
+      "13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды",
+  },
+  {
+    year: 2016,
+    title:
+      "Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11",
+  },
+  {
+    year: 2017,
+    title:
+      "Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi",
+  },
+  {
+    year: 2015,
+    title:
+      "13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды",
+  },
+  {
+    year: 2016,
+    title:
+      "Телескоп «Хаббл» обнаружил самую удалённую из всех обнаруженных галактик, получившую обозначение GN-z11",
+  },
+  {
+    year: 2017,
+    title:
+      "Компания Tesla официально представила первый в мире электрический грузовик Tesla Semi",
+  },
+];
+
 function App() {
   return (
     <Wrapper>
       <Title>Исторические даты</Title>
       <Main>
         <Container>
-          <TimelineWheel />
-          <MySwiper />
+          <TimelineWheel pointsQuantity={info.length} />
+          <MySwiper info={info} />
         </Container>
       </Main>
     </Wrapper>
@@ -26,17 +59,15 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   padding: 8.8% 2% 4% 4%;
-
   border-left: 1px solid rgba(66, 86, 122, 1);
   border-right: 1px solid rgba(66, 86, 122, 1);
-
   height: 100%;
 `;
 
 const Title = styled.h1`
   position: absolute;
- 
-
+  width: 18%;
+  top: 7%;
   padding-left: 7%;
   font-family: PT Sans;
   font-weight: 700;
@@ -45,12 +76,12 @@ const Title = styled.h1`
   letter-spacing: 0%;
   color: #42567a;
 
-   &::before {
-    content: '';
+  &::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 5px; 
+    width: 5px;
     height: 100%;
     background: linear-gradient(to bottom, #3877ee -5%, #ef5da8 85%);
   }
