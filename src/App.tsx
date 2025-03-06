@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { MySwiper } from "./swiper/Swiper";
+import { MySwiper } from "./components/swiper/Swiper";
+import { TimelineWheel } from "./components/timeline/TimelineWheel";
 
 function App() {
   return (
     <Wrapper>
       <Main>
         <Container>
+          <TimelineWheel />
           <MySwiper />
         </Container>
       </Main>
@@ -30,4 +32,6 @@ const Main = styled.main`
   height: 100%;
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+   
+`;

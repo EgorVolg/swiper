@@ -4,8 +4,8 @@ import SwiperCore from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import styled from "styled-components";
-import VectorRight from "./Next.svg";
-import VectorLeft from "./Prev.svg";
+import VectorRight from "./../assets/Next.svg";
+import VectorLeft from "./../assets/Prev.svg";
 
 const info = [
   {
