@@ -25,36 +25,38 @@ export const MySwiper = ({
 
   return (
     <>
-      <NavButtonsBlock>
+      <NavBlock>
         <ListPointsBlock>
           <b>06/06</b>
         </ListPointsBlock>
-        <NavButton
-          className="swiper-button-prev"
-          onClick={() => swiperRef.current?.slidePrev()}
-        >
-          <img src={VectorLeft} />
-        </NavButton>
-        <NavButton
-          className="swiper-button-next"
-          onClick={() => swiperRef.current?.slideNext()}
-        >
-          <img src={VectorRight} />
-        </NavButton>
-      </NavButtonsBlock>
+        <NavButtonsBlock>
+          <NavButton
+            className="swiper-button-prev"
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            <img src={VectorLeft} />
+          </NavButton>
+          <NavButton
+            className="swiper-button-next"
+            onClick={() => swiperRef.current?.slideNext()}
+          >
+            <img src={VectorRight} />
+          </NavButton>
+        </NavButtonsBlock>
+      </NavBlock>
 
       <SwiperContainer>
-        <PrevButton
+        {/* <PrevButton
           className="swiper-button-prev"
           isVisible={!isBeginning}
           onClick={() => swiperRef.current?.slidePrev()}
         >
           <img src={VectorLeft} width={"7px"} height={"15px"} color="#3877EE" />
-        </PrevButton>
+        </PrevButton> */}
 
         <Swiper
-          spaceBetween={10}
-          slidesPerView={3}
+          spaceBetween={80}
+          slidesPerView={3.5}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -71,7 +73,6 @@ export const MySwiper = ({
             </SwiperSlide>
           ))}
         </Swiper>
-
         <NextButton
           className="swiper-button-next"
           isVisible={!isEnd}
@@ -87,16 +88,30 @@ export const MySwiper = ({
 const SwiperContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  position: absolute;
+
+  width: 1280px;
+
+  left: 320px;
+  bottom: 100px;
+  padding: 0 80px;
 `;
 
-const NavButtonsBlock = styled.div`
+const NavBlock = styled.div`
   display: flexbox;
-  margin-bottom: 3%;
+  position: absolute;
+  width: 120px;
+  height: 88px;
+  top: 697px;
+  left: 400px;
+
+  margin-bottom: 104px;
 `;
 
 const ListPointsBlock = styled.div`
-  padding-bottom: 20px;
+  width: 36px;
+  height: 18px;
+  margin-bottom: 20px;
 
   b {
     font-family: PT Sans;
@@ -108,20 +123,27 @@ const ListPointsBlock = styled.div`
   }
 `;
 
+const NavButtonsBlock = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const NavButton = styled.button`
   height: 50px;
   width: 50px;
   border-radius: 50%;
   border: 1px solid #42567a80;
   cursor: pointer;
-  margin-right: 30px;
 `;
 
 const InfoBlock = styled.div`
-  height: 7%;
+  width: 400px;
+  height: 135px;
 `;
 
 const YearText = styled.p`
+  width: 41px;
+  height: 30px;
   font-family: "Bebas Neue";
   font-weight: 400;
   font-size: 25px;
@@ -136,13 +158,18 @@ const Info = styled.div`
   font-size: 20px;
   line-height: 30px;
   letter-spacing: 0%;
+ 
   color: #42567a;
 `;
 
 const NextButton = styled.button<{ isVisible: boolean }>`
   display: ${({ isVisible }) => (isVisible ? "flex" : "none")};
   position: absolute;
-  right: 10%;
+  align-items: center;
+  justify-content: center;
+
+  left: 1350px;
+
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -151,8 +178,6 @@ const NextButton = styled.button<{ isVisible: boolean }>`
   font-size: 24px;
   border: none;
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
 
   box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
 `;

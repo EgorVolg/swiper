@@ -41,8 +41,10 @@ function App() {
     <Wrapper>
       <Title>Исторические даты</Title>
       <Main>
+        <HorizontalLine />
+        <VerticalLine />
+        <TimelineWheel pointsQuantity={info.length} />
         <Container>
-          <TimelineWheel pointsQuantity={info.length} />
           <MySwiper info={info} />
         </Container>
       </Main>
@@ -53,22 +55,29 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-  padding-left: 16.6%;
-  padding-right: 8.4%;
+  // padding-left: 16.6%;
+  // padding-right: 8.4%;
+  padding-left: 320px;
+  padding-right: 160px;
 `;
 
 const Main = styled.main`
-  padding: 8.8% 2% 4% 4%;
+  // padding: 8.8% 2% 0 4%;
+  width: 1440px;
+  height: 1080px;
+
+  border-width: 1px;
+
   border-left: 1px solid rgba(66, 86, 122, 1);
   border-right: 1px solid rgba(66, 86, 122, 1);
-  height: 100%;
 `;
 
 const Title = styled.h1`
   position: absolute;
-  width: 18%;
-  top: 7%;
-  padding-left: 7%;
+  width: 353px;
+  height: 134px;
+  top: 170px;
+  padding-left: 78px;
   font-family: PT Sans;
   font-weight: 700;
   font-size: 56px;
@@ -85,6 +94,22 @@ const Title = styled.h1`
     height: 100%;
     background: linear-gradient(to bottom, #3877ee -5%, #ef5da8 85%);
   }
+`;
+
+const HorizontalLine = styled.div`
+  position: absolute;
+  // top: 50%;
+  top: 480px;
+  width: 75vw;
+  height: 1px;
+  background-color: rgba(66, 86, 122, 1);
+`;
+
+const VerticalLine = styled(HorizontalLine)`
+  top: 0;
+  width: 1px;
+  height: 100%;
+  left: 54%;
 `;
 
 const Container = styled.div`
