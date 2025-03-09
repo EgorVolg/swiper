@@ -39,13 +39,14 @@ const info = [
 function App() {
   return (
     <Wrapper>
-      <Title>Исторические даты</Title>
       <Main>
         <HorizontalLine />
         <VerticalLine />
-        <TimelineWheel pointsQuantity={info.length} />
+        <Title>Исторические даты</Title>
+
         <Container>
-          <MySwiper info={info} />
+          <TimelineWheel info={info} />
+          {/* <MySwiper info={info} /> */}
         </Container>
       </Main>
     </Wrapper>
@@ -55,63 +56,51 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-  // padding-left: 16.6%;
-  // padding-right: 8.4%;
-  padding-left: 320px;
-  padding-right: 160px;
+  width: 100vw;
+  height: 100vh;
 `;
 
 const Main = styled.main`
-  // padding: 8.8% 2% 0 4%;
-  width: 1440px;
-  height: 1080px;
+  position: relative;
+  box-sizing: border-box;
+  margin-left: 16.6%;
+  margin-right: 8.4%;
 
-  border-width: 1px;
-
+  height: 100%;
   border-left: 1px solid rgba(66, 86, 122, 1);
   border-right: 1px solid rgba(66, 86, 122, 1);
 `;
 
-const Title = styled.h1`
+const Title = styled.div`
   position: absolute;
-  width: 353px;
-  height: 134px;
-  top: 170px;
-  padding-left: 78px;
-  font-family: PT Sans;
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 120%;
-  letter-spacing: 0%;
-  color: #42567a;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background: linear-gradient(to bottom, #3877ee -5%, #ef5da8 85%);
-  }
+  top: 8.85%;
+  left: 10%;
 `;
 
 const HorizontalLine = styled.div`
   position: absolute;
-  // top: 50%;
-  top: 480px;
-  width: 75vw;
   height: 1px;
-  background-color: rgba(66, 86, 122, 1);
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #42567a;
 `;
 
-const VerticalLine = styled(HorizontalLine)`
-  top: 0;
+const VerticalLine = styled.div`
+  position: absolute;
   width: 1px;
   height: 100%;
-  left: 54%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #42567a;
 `;
 
 const Container = styled.div`
-  margin: 0 80px;
+  position: relative;
+
+  box-sizing: border-box;
+
+  padding: 5.5% 10%;
+  width: 100%;
+  height: 100%;
 `;

@@ -25,7 +25,7 @@ export const MySwiper = ({
 
   return (
     <>
-      <NavBlock>
+      {/* <NavBlock>
         <ListPointsBlock>
           <b>06/06</b>
         </ListPointsBlock>
@@ -43,7 +43,7 @@ export const MySwiper = ({
             <img src={VectorRight} />
           </NavButton>
         </NavButtonsBlock>
-      </NavBlock>
+      </NavBlock> */}
 
       <SwiperContainer>
         {/* <PrevButton
@@ -55,8 +55,8 @@ export const MySwiper = ({
         </PrevButton> */}
 
         <Swiper
-          spaceBetween={80}
-          slidesPerView={3.5}
+          spaceBetween={8}
+          slidesPerView={3}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -73,13 +73,13 @@ export const MySwiper = ({
             </SwiperSlide>
           ))}
         </Swiper>
-        <NextButton
+        {/* <NextButton
           className="swiper-button-next"
           isVisible={!isEnd}
           onClick={() => swiperRef.current?.slideNext()}
         >
           <img src={VectorRight} width={"7px"} height={"15px"} />
-        </NextButton>
+        </NextButton> */}
       </SwiperContainer>
     </>
   );
@@ -87,14 +87,10 @@ export const MySwiper = ({
 
 const SwiperContainer = styled.div`
   display: flex;
-  align-items: center;
-  position: absolute;
-
-  width: 1280px;
-
-  left: 320px;
-  bottom: 100px;
-  padding: 0 80px;
+  align-items: center; 
+   
+ 
+ 
 `;
 
 const NavBlock = styled.div`
@@ -137,29 +133,29 @@ const NavButton = styled.button`
 `;
 
 const InfoBlock = styled.div`
-  width: 400px;
-  height: 135px;
+  // width: 400px;
+  // height: 135px;
 `;
 
 const YearText = styled.p`
-  width: 41px;
-  height: 30px;
-  font-family: "Bebas Neue";
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 30px;
-  letter-spacing: 0%;
-  color: #3877ee;
+  // width: 41px;
+  // height: 30px;
+  // font-family: "Bebas Neue";
+  // font-weight: 400;
+  // font-size: 25px;
+  // line-height: 30px;
+  // letter-spacing: 0%;
+  // color: #3877ee;
 `;
 
 const Info = styled.div`
-  font-family: "PT Sans";
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: 0%;
+  // font-family: "PT Sans";
+  // font-weight: 400;
+  // font-size: 20px;
+  // line-height: 30px;
+  // letter-spacing: 0%;
  
-  color: #42567a;
+  // color: #42567a;
 `;
 
 const NextButton = styled.button<{ isVisible: boolean }>`
