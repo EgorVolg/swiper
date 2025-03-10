@@ -56,7 +56,7 @@ export const MySwiper = ({
 
         <Swiper
           spaceBetween={8}
-          slidesPerView={3}
+          slidesPerView={3.5}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",

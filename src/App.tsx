@@ -43,10 +43,8 @@ function App() {
         <HorizontalLine />
         <VerticalLine />
         <Title>Исторические даты</Title>
-
         <Container>
           <TimelineWheel info={info} />
-          {/* <MySwiper info={info} /> */}
         </Container>
       </Main>
     </Wrapper>
@@ -98,8 +96,7 @@ const VerticalLine = styled.div`
 const Container = styled.div`
   position: relative;
 
-  box-sizing: border-box;
-
+  box-sizing: border-box; 
   padding: 5.5% 10%;
   width: 100%;
   height: 100%;

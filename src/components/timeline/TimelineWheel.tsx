@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { MySwiper } from "../swiper/Swiper";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import Swiper from "swiper";
 
 export const TimelineWheel = ({
   info,
@@ -47,6 +48,10 @@ export const TimelineWheel = ({
           />
         ))}
       </CircleContainer>
+
+      <SwiperContainer>
+        <MySwiper info={info} />
+      </SwiperContainer>
     </Container>
   );
 };
@@ -55,8 +60,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-
+  position: relative; 
   width: 100%;
   height: 100%;
 `;
@@ -83,4 +87,11 @@ const Dot = styled.div`
   left: 50%;
   transform: translate(-20%, -20%);
   background-color: rgba(66, 86, 122, 1);
+`;
+
+const SwiperContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 135px;
 `;
